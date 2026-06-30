@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Presufy — Ayuda y FAQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f8f5;--white:#fff;--border:#e2e5d8;--accent:#2d6a2d;--alight:#e8f4e8;--amid:#4a9e4a;--text:#1a1f17;--muted:#6b7260;--danger:#c0392b;--r:12px;--rs:8px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text)}
+header{background:var(--white);border-bottom:1px solid var(--border);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 1px 8px rgba(0,0,0,.06)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-name{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--accent)}
+.hero{background:linear-gradient(135deg,#3a8a3a,#1e5c1e);padding:56px 2rem;text-align:center;color:#fff}
+.hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(26px,4vw,42px);letter-spacing:-1px;margin-bottom:12px}
+.hero p{font-size:16px;opacity:.8;max-width:500px;margin:0 auto 28px}
+.search-wrap{max-width:480px;margin:0 auto;position:relative}
+.search-wrap input{width:100%;padding:14px 20px 14px 46px;border-radius:100px;border:none;font-size:15px;outline:none;font-family:'Inter',sans-serif}
+.search-wrap::before{content:'🔍';position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:16px}
+.content{max-width:820px;margin:0 auto;padding:48px 2rem 80px}
+/* CATEGORIES */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:40px}
+.cat-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:18px;text-align:center;cursor:pointer;transition:.2s;text-decoration:none;color:var(--text)}
+.cat-card:hover{border-color:var(--accent);background:var(--alight);transform:translateY(-2px)}
+.cat-card.on{border-color:var(--accent);background:var(--alight)}
+.cat-icon{font-size:28px;margin-bottom:8px}
+.cat-name{font-family:'Syne',sans-serif;font-weight:700;font-size:13px}
+.cat-count{font-size:11px;color:var(--muted);margin-top:2px}
+/* FAQ ITEMS */
+.faq-section{margin-bottom:32px}
+.faq-section-title{font-family:'Syne',sans-serif;font-weight:700;font-size:18px;margin-bottom:16px;color:var(--accent);display:flex;align-items:center;gap:8px}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--r);margin-bottom:8px;overflow:hidden;transition:.2s}
+.faq-item:hover{border-color:var(--amid)}
+.faq-item.open{border-color:var(--accent)}
+.faq-q{padding:16px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:500;font-size:15px;user-select:none}
+.faq-q::after{content:'+';font-size:20px;color:var(--accent);font-weight:300;transition:.2s;flex-shrink:0}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{display:none;padding:0 20px 16px;font-size:14px;color:var(--muted);line-height:1.7;border-top:1px solid var(--border)}
+.faq-item.open .faq-a{display:block}
+.faq-a strong{color:var(--text)}
+.faq-a a{color:var(--accent);text-decoration:none}
+.faq-a code{background:var(--bg);padding:2px 6px;border-radius:4px;font-family:monospace;font-size:13px;border:1px solid var(--border)}
+/* CONTACT */
+.contact-card{background:linear-gradient(135deg,#e8f4e8,#d4ecd4);border:1.5px solid rgba(45,106,45,.2);border-radius:var(--r);padding:28px 32px;text-align:center;margin-top:32px}
+.contact-card h2{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;margin-bottom:8px}
+.contact-card p{font-size:14px;color:var(--muted);margin-bottom:20px}
+.contact-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn-contact{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:var(--rs);font-weight:600;font-size:14px;text-decoration:none;transition:.2s;cursor:pointer;border:none}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--amid)}
+.btn-secondary{background:var(--white);color:var(--text);border:1px solid var(--border)}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+/* CHAT */
+.chat-bubble{position:fixed;bottom:24px;right:24px;background:var(--accent);color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;cursor:pointer;box-shadow:0 4px 20px rgba(45,106,45,.4);transition:.2s;z-index:100;border:none}
+.chat-bubble:hover{transform:scale(1.1)}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="presufy.html" class="logo">
+    <div style="width:32px;height:32px;background:linear-gradient(135deg,#3a8a3a,#1e5c1e);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px">📄</div>
+    <span class="logo-name">Presufy</span>
+  </a>
+  <a href="presufy.html" style="font-size:13px;color:var(--muted);text-decoration:none;padding:7px 14px;border-radius:var(--rs);transition:.15s" onmouseover="this.style.background='var(--alight)'" onmouseout="this.style.background=''">← Volver a Presufy</a>
+</header>
+
+<div class="hero">
+  <h1>¿En qué podemos ayudarte?</h1>
+  <p>Encuentra respuestas rápidas o contacta con nuestro equipo de soporte en español.</p>
+  <div class="search-wrap">
+    <input type="text" placeholder="Busca tu pregunta..." oninput="searchFAQ(this.value)">
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- CATEGORÍAS -->
+  <div class="cat-grid">
+    <div class="cat-card on" onclick="filterCat('all')"><div class="cat-icon">🔍</div><div class="cat-name">Todo</div><div class="cat-count">28 preguntas</div></div>
+    <div class="cat-card" onclick="filterCat('empezar')"><div class="cat-icon">🚀</div><div class="cat-name">Empezar</div><div class="cat-count">5 preguntas</div></div>
+    <div class="cat-card" onclick="filterCat('presupuestos')"><div class="cat-icon">📋</div><div class="cat-name">Presupuestos</div><div class="cat-count">8 preguntas</div></div>
+    <div class="cat-card" onclick="filterCat('planes')"><div class="cat-icon">💳</div><div class="cat-name">Planes y pagos</div><div class="cat-count">7 preguntas</div></div>
+    <div class="cat-card" onclick="filterCat('cuenta')"><div class="cat-icon">👤</div><div class="cat-name">Mi cuenta</div><div class="cat-count">5 preguntas</div></div>
+    <div class="cat-card" onclick="filterCat('tecnico')"><div class="cat-icon">🔧</div><div class="cat-name">Técnico</div><div class="cat-count">3 preguntas</div></div>
+  </div>
+
+  <!-- FAQs -->
+  <div id="faq-container">
+
+    <div class="faq-section" data-cat="empezar">
+      <div class="faq-section-title">🚀 Empezar con Presufy</div>
+
+      <div class="faq-item" data-cat="empezar">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Necesito registrarme para usar Presufy?</div>
+        <div class="faq-a">No es obligatorio. Puedes empezar a crear presupuestos sin cuenta. Sin embargo, <strong>te recomendamos crear una cuenta gratuita</strong> para no perder tus presupuestos, precios y configuración si cambias de dispositivo o borras el caché del navegador.</div>
+      </div>
+
+      <div class="faq-item" data-cat="empezar">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Cuánto tiempo tarda en crear un presupuesto?</div>
+        <div class="faq-a">Normalmente entre <strong>30 segundos y 2 minutos</strong>, dependiendo de la cantidad de trabajos. Si tienes tu catálogo de precios configurado, el generador usa tus tarifas directamente y el resultado es inmediato.</div>
+      </div>
+
+      <div class="faq-item" data-cat="empezar">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Qué oficios soporta Presufy?</div>
+        <div class="faq-a">Actualmente soporta tres oficios: <strong>⚡ Electricista</strong>, <strong>🔧 Fontanero</strong> y <strong>🧱 Albañil</strong>. Con el modo Empresa puedes mezclar los tres en un mismo presupuesto. Estamos trabajando en añadir más especialidades próximamente.</div>
+      </div>
+
+      <div class="faq-item" data-cat="empezar">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Cómo configuro mis precios?</div>
+        <div class="faq-a">Ve a la pestaña <strong>"Mis precios"</strong> y selecciona tu oficio. Añade los materiales y trabajos con su precio. Presufy los usará automáticamente al generar presupuestos. Cada oficio tiene su propia lista separada.</div>
+      </div>
+
+      <div class="faq-item" data-cat="empezar">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Funciona en el móvil?</div>
+        <div class="faq-a">Sí, Presufy es <strong>totalmente responsive</strong>. Puedes crear presupuestos desde el móvil en la obra, incluso usando el micrófono para dictar los trabajos. Para mejor experiencia, te recomendamos añadirlo a la pantalla de inicio de tu teléfono.</div>
+      </div>
+    </div>
+
+    <div class="faq-section" data-cat="presupuestos">
+      <div class="faq-section-title">📋 Crear y gestionar presupuestos</div>
+
+      <div class="faq-item" data-cat="presupuestos">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Puedo editar los precios que genera la IA?</div>
+        <div class="faq-a">Sí. Todos los precios de la tabla son <strong>editables directamente</strong> — haz clic en cualquier precio y escribe el tuyo. El total se recalcula automáticamente al instante.</div>
+      </div>
+
+      <div class="faq-item" data-cat="presupuestos">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Cómo descargo el presupuesto en PDF?</div>
+        <div class="faq-a">Una vez generado el presupuesto, pulsa el botón <strong>"📄 Descargar PDF"</strong>. Se abrirá una ventana con el presupuesto maquetado. Desde ahí usa <strong>Ctrl+P</strong> (o Cmd+P en Mac) y selecciona "Guardar como PDF". Esta función requiere el <strong>Plan Profesional</strong>.</div>
+      </div>
+
+      <div class="faq-item" data-cat="presupuestos">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Los presupuestos incluyen IVA?</div>
+        <div class="faq-a">Sí. Los precios que introduces ya incluyen el IVA del 21%. En el resumen de totales verás el desglose: <strong>base imponible</strong>, <strong>IVA 21%</strong> (que ya está dentro del precio) y el <strong>total final</strong>. Esto facilita la comprensión al cliente.</div>
+      </div>
+
+      <div class="faq-item" data-cat="presupuestos">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Puedo guardar los presupuestos?</div>
+        <div class="faq-a">Sí. Pulsa <strong>"💾 Guardar presupuesto"</strong> después de generarlo. Podrás recuperarlo desde la lista de presupuestos guardados en la parte superior de la app. Con el plan gratuito puedes guardar los 3 últimos; con el plan Pro, ilimitados.</div>
+      </div>
+
+      <div class="faq-item" data-cat="presupuestos">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Puedo hacer presupuestos con varios oficios a la vez?</div>
+        <div class="faq-a">Sí, con el <strong>modo Empresa</strong>. Selecciona "🏢 Empresa" en el primer paso y cada fila de trabajo tendrá un desplegable para elegir el oficio (electricidad, fontanería o albañilería). Presufy buscará los precios en el catálogo de cada oficio.</div>
+      </div>
+
+      <div class="faq-item" data-cat="presupuestos">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Qué pasa si no tengo precio para un trabajo en mi catálogo?</div>
+        <div class="faq-a">Si el trabajo no está en tu catálogo, aparecerá con precio <strong>0 €</strong> y una advertencia. Puedes editar ese precio directamente en la tabla antes de descargar el presupuesto.</div>
+      </div>
+
+      <div class="faq-item" data-cat="presupuestos">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Puedo enviar el presupuesto por WhatsApp?</div>
+        <div class="faq-a">Sí. Pulsa <strong>"📋 Copiar texto"</strong> y pega el contenido en WhatsApp Web. Próximamente añadiremos un botón de envío directo a WhatsApp.</div>
+      </div>
+
+      <div class="faq-item" data-cat="presupuestos">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Cuánto tiempo es válido un presupuesto?</div>
+        <div class="faq-a">Por defecto, los presupuestos de Presufy tienen una <strong>validez de 30 días</strong> desde la fecha de emisión, conforme a las condiciones generales incluidas. Puedes modificar esto editando el texto de condiciones.</div>
+      </div>
+    </div>
+
+    <div class="faq-section" data-cat="planes">
+      <div class="faq-section-title">💳 Planes y pagos</div>
+
+      <div class="faq-item" data-cat="planes">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Puedo cancelar cuando quiera?</div>
+        <div class="faq-a">Sí. <strong>Sin permanencia</strong>. Puedes cancelar tu suscripción en cualquier momento enviando un email a <a href="mailto:soporte@presufy.es">soporte@presufy.es</a>. La cancelación es efectiva al final del periodo de facturación en curso.</div>
+      </div>
+
+      <div class="faq-item" data-cat="planes">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Qué pasa cuando termina el periodo de prueba de 7 días?</div>
+        <div class="faq-a">Al terminar los 7 días de prueba, el plan se mantiene activo y se realizará el primer cobro. Si no quieres continuar, cancela antes de que terminen los 7 días y no se te cobrará nada.</div>
+      </div>
+
+      <div class="faq-item" data-cat="planes">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Cómo funciona el proceso de pago?</div>
+        <div class="faq-a">
+          1. Elige tu plan y selecciona PayPal como método de pago<br>
+          2. Completa el pago en PayPal y copia el ID de transacción<br>
+          3. Vuelve a Presufy e introduce el ID y tu email<br>
+          4. Recibirás un código de activación en tu email en menos de 24h<br>
+          5. Introduce el código en Presufy para activar tu plan
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="planes">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Dónde encuentro el ID de transacción de PayPal?</div>
+        <div class="faq-a">Entra en tu cuenta de PayPal → <strong>"Actividad"</strong> → busca el pago → haz clic sobre él → copia el <strong>"ID de transacción"</strong>. Es un código alfanumérico de unos 17 caracteres, ej: <code>7BX12345AB678901C</code>.</div>
+      </div>
+
+      <div class="faq-item" data-cat="planes">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Cuánto tarda en activarse el plan tras el pago?</div>
+        <div class="faq-a">Una vez verificado el pago, recibirás tu código de activación en un máximo de <strong>24 horas hábiles</strong>. Normalmente es mucho más rápido (menos de 2 horas en horario laboral).</div>
+      </div>
+
+      <div class="faq-item" data-cat="planes">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Qué diferencia hay entre el Plan Pro y el Plan Empresa?</div>
+        <div class="faq-a">El <strong>Plan Pro</strong> es para autónomos individuales — incluye todo ilimitado para 1 usuario. El <strong>Plan Empresa</strong> añade hasta 5 usuarios simultáneos, panel de administración, presupuestos multi-oficio, firma digital e integración con software de contabilidad.</div>
+      </div>
+
+      <div class="faq-item" data-cat="planes">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Emiten factura?</div>
+        <div class="faq-a">Sí. Recibirás una factura por email tras cada cobro. Si necesitas factura con tus datos fiscales, indícalos al activar el plan o escríbenos a <a href="mailto:facturacion@presufy.es">facturacion@presufy.es</a>.</div>
+      </div>
+    </div>
+
+    <div class="faq-section" data-cat="cuenta">
+      <div class="faq-section-title">👤 Mi cuenta</div>
+
+      <div class="faq-item" data-cat="cuenta">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Dónde se guardan mis datos?</div>
+        <div class="faq-a">Actualmente los datos (presupuestos, catálogo de precios, configuración de empresa) se guardan en el <strong>almacenamiento local de tu navegador</strong>. Esto significa que están en tu dispositivo, no en un servidor externo. Si cambias de dispositivo, necesitarás volver a configurarlos.</div>
+      </div>
+
+      <div class="faq-item" data-cat="cuenta">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Mis datos son seguros?</div>
+        <div class="faq-a">Sí. Los presupuestos se guardan solo en tu dispositivo — no se envían a ningún servidor. La conexión a Presufy está cifrada con <strong>SSL/TLS</strong>. Los datos de pago los gestiona PayPal con sus propias medidas de seguridad, sin que Presufy los vea.</div>
+      </div>
+
+      <div class="faq-item" data-cat="cuenta">
+        <div class="faq-q" onclick="toggleFAQ(this)">He borrado el caché y perdí mis datos, ¿qué hago?</div>
+        <div class="faq-a">Si borraste el caché o el almacenamiento local del navegador, los datos locales se pierden. Por eso recomendamos <strong>descargar tus presupuestos en PDF o Word</strong> como copia de seguridad. Contáctanos en <a href="mailto:soporte@presufy.es">soporte@presufy.es</a> si necesitas recuperar tu plan activo.</div>
+      </div>
+
+      <div class="faq-item" data-cat="cuenta">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Cómo cambio mi contraseña?</div>
+        <div class="faq-a">Desde la página de inicio de sesión, pulsa <strong>"¿Olvidaste tu contraseña?"</strong> e introduce tu email. Recibirás las instrucciones para restablecerla.</div>
+      </div>
+
+      <div class="faq-item" data-cat="cuenta">
+        <div class="faq-q" onclick="toggleFAQ(this)">¿Cómo elimino mi cuenta?</div>
+        <div class="faq-a">Envíanos un email a <a href="mailto:privacidad@presufy.es">privacidad@presufy.es</a> con asunto "Eliminar cuenta" y tu email de registro. Eliminaremos todos tus datos en un plazo máximo de 30 días conforme al RGPD.</div>
+      </div>
+    </div>
+
+    <div class="faq-section" data-cat="tecnico">
+      <div class="faq-section-title">🔧 Soporte técnico</div>
+
+      <div class="faq-item" data-cat="tecnico">
+        <div class="faq-q" onclick="toggleFAQ(this)">El micrófono no funciona, ¿qué hago?</div>
+        <div class="faq-a">El micrófono requiere el permiso del navegador y solo funciona en <strong>Chrome y Edge</strong>. Comprueba que:<br>1. Estás usando Chrome o Edge<br>2. Has dado permiso al micrófono (aparece un icono en la barra de dirección)<br>3. Tu dispositivo tiene micrófono disponible y no está siendo usado por otra app.</div>
+      </div>
+
+      <div class="faq-item" data-cat="tecnico">
+        <div class="faq-q" onclick="toggleFAQ(this)">No puedo descargar el PDF, se descarga como HTML</div>
+        <div class="faq-a">Esto ocurre cuando el navegador bloquea las ventanas emergentes. Abre el archivo <code>.html</code> descargado en tu navegador y pulsa <strong>Ctrl+P</strong> → en el selector de impresora elige <strong>"Guardar como PDF"</strong>. El resultado es idéntico.</div>
+      </div>
+
+      <div class="faq-item" data-cat="tecnico">
+        <div class="faq-q" onclick="toggleFAQ(this)">La página va lenta, ¿qué puedo hacer?</div>
+        <div class="faq-a">Prueba a: 1) <strong>Actualizar el navegador</strong> a la última versión. 2) <strong>Limpiar la caché</strong> (Ctrl+Shift+Delete). 3) <strong>Desactivar extensiones</strong> del navegador. Si el problema persiste, contáctanos con el nombre de tu navegador y sistema operativo.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONTACTO -->
+  <div class="contact-card">
+    <h2>¿No encontraste tu respuesta?</h2>
+    <p>Nuestro equipo de soporte en español te responde en menos de 24 horas</p>
+    <div class="contact-btns">
+      <a href="mailto:soporte@presufy.es" class="btn-contact btn-primary">✉️ Enviar email</a>
+      <a href="presufy.html" class="btn-contact btn-secondary">← Volver a Presufy</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- CHAT BUBBLE -->
+<button class="chat-bubble" onclick="window.location.href='mailto:soporte@presufy.es'" title="Contactar soporte">💬</button>
+
+<script>
+function toggleFAQ(el) {
+  const item = el.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+function filterCat(cat) {
+  document.querySelectorAll('.cat-card').forEach(c => c.classList.remove('on'));
+  event.currentTarget.classList.add('on');
+  document.querySelectorAll('.faq-section').forEach(s => {
+    s.style.display = cat === 'all' || s.dataset.cat === cat ? 'block' : 'none';
+  });
+  document.querySelectorAll('.faq-item').forEach(i => {
+    i.style.display = cat === 'all' || i.dataset.cat === cat ? 'block' : 'none';
+  });
+}
+
+function searchFAQ(q) {
+  const ql = q.toLowerCase().trim();
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const text = item.textContent.toLowerCase();
+    item.style.display = !ql || text.includes(ql) ? 'block' : 'none';
+  });
+  document.querySelectorAll('.faq-section').forEach(sec => {
+    const visible = [...sec.querySelectorAll('.faq-item')].some(i => i.style.display !== 'none');
+    sec.style.display = visible ? 'block' : 'none';
+  });
+}
+</script>
+</body>
+</html>

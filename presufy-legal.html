@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Presufy — Legal</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f8f5;--white:#fff;--border:#e2e5d8;--accent:#2d6a2d;--alight:#e8f4e8;--amid:#4a9e4a;--text:#1a1f17;--muted:#6b7260;--r:12px;--rs:8px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.7}
+header{background:var(--white);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;box-shadow:0 1px 8px rgba(0,0,0,.06);position:sticky;top:0;z-index:100}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-name{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--accent)}
+.back{color:var(--muted);font-size:14px;text-decoration:none;padding:7px 14px;border-radius:var(--rs);transition:.15s}
+.back:hover{background:var(--alight);color:var(--accent)}
+.hero{background:linear-gradient(135deg,#3a8a3a,#1e5c1e);padding:48px 2rem;text-align:center;color:#fff}
+.hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(24px,4vw,40px);letter-spacing:-1px;margin-bottom:10px}
+.hero p{font-size:14px;opacity:.8;max-width:500px;margin:0 auto}
+.tabs-bar{background:var(--white);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;gap:0;overflow-x:auto;position:sticky;top:60px;z-index:99}
+.tab{padding:14px 20px;border:none;background:none;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:.15s}
+.tab:hover{color:var(--text)}
+.tab.on{color:var(--accent);border-bottom-color:var(--accent)}
+.content{max-width:820px;margin:0 auto;padding:48px 2rem 80px}
+.section{display:none}
+.section.on{display:block}
+.doc-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:40px 48px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+@media(max-width:600px){.doc-card{padding:24px 20px}}
+.doc-header{border-bottom:2px solid var(--accent);padding-bottom:16px;margin-bottom:28px}
+.doc-title{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;color:var(--accent);margin-bottom:4px}
+.doc-meta{font-size:12px;color:var(--muted)}
+h2{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;color:var(--text);margin:28px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+h2:first-of-type{margin-top:0}
+p{margin-bottom:12px;color:var(--text)}
+ul,ol{padding-left:20px;margin-bottom:12px}
+li{margin-bottom:6px}
+.highlight{background:var(--alight);border-left:3px solid var(--accent);padding:12px 16px;border-radius:0 var(--rs) var(--rs) 0;margin:16px 0;font-size:14px}
+.highlight strong{color:var(--accent)}
+.table-wrap{overflow-x:auto;margin:16px 0}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:var(--accent);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+td{padding:10px 14px;border-bottom:1px solid var(--border)}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--bg)}
+.cookie-toggle{display:flex;align-items:center;justify-content:space-between;background:var(--bg);border:1px solid var(--border);border-radius:var(--rs);padding:14px 16px;margin-bottom:10px}
+.cookie-name{font-weight:600;font-size:14px;margin-bottom:2px}
+.cookie-desc{font-size:12px;color:var(--muted)}
+.toggle{width:44px;height:24px;border-radius:12px;background:#ccc;position:relative;cursor:pointer;transition:.2s;flex-shrink:0;border:none}
+.toggle.on{background:var(--accent)}
+.toggle::after{content:'';position:absolute;width:18px;height:18px;border-radius:50%;background:#fff;top:3px;left:3px;transition:.2s;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.toggle.on::after{left:23px}
+.btn-save{background:var(--accent);color:#fff;border:none;border-radius:var(--rs);font-family:'Syne',sans-serif;font-weight:700;font-size:14px;padding:12px 24px;cursor:pointer;margin-top:8px;transition:.2s}
+.btn-save:hover{background:var(--amid)}
+footer{background:var(--white);border-top:1px solid var(--border);padding:28px 2rem;text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none;margin:0 10px}
+footer a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="presufy.html" class="logo">
+    <div style="width:32px;height:32px;background:linear-gradient(135deg,#3a8a3a,#1e5c1e);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px">📄</div>
+    <span class="logo-name">Presufy</span>
+  </a>
+  <a href="presufy.html" class="back">← Volver</a>
+</header>
+
+<div class="hero">
+  <h1>Centro Legal</h1>
+  <p>Toda la información legal de Presufy. Transparencia total con nuestros usuarios.</p>
+</div>
+
+<div class="tabs-bar">
+  <button class="tab on" onclick="showTab('aviso')">Aviso Legal</button>
+  <button class="tab" onclick="showTab('privacidad')">Privacidad</button>
+  <button class="tab" onclick="showTab('cookies')">Cookies</button>
+  <button class="tab" onclick="showTab('terminos')">Términos de uso</button>
+  <button class="tab" onclick="showTab('contratacion')">Contratación</button>
+  <button class="tab" onclick="showTab('rgpd')">RGPD / LOPD</button>
+</div>
+
+<div class="content">
+
+  <!-- AVISO LEGAL -->
+  <div class="section on" id="s-aviso">
+    <div class="doc-card">
+      <div class="doc-header">
+        <div class="doc-title">Aviso Legal</div>
+        <div class="doc-meta">Última actualización: 29 de junio de 2025 · De acuerdo con la LSSI-CE (Ley 34/2002)</div>
+      </div>
+
+      <h2>1. Datos identificativos del titular</h2>
+      <p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se facilitan los siguientes datos:</p>
+      <div class="highlight">
+        <strong>Denominación social:</strong> [TU NOMBRE O RAZÓN SOCIAL]<br>
+        <strong>NIF/CIF:</strong> [TU NIF/CIF]<br>
+        <strong>Domicilio:</strong> [TU DIRECCIÓN FISCAL], España<br>
+        <strong>Email de contacto:</strong> info@presufy.es<br>
+        <strong>Actividad:</strong> Desarrollo y comercialización de software SaaS para la generación de presupuestos profesionales
+      </div>
+
+      <h2>2. Objeto y ámbito de aplicación</h2>
+      <p>El presente Aviso Legal regula el acceso y uso del sitio web Presufy (en adelante, "el Sitio"), así como los servicios ofrecidos a través del mismo. El acceso y uso del Sitio atribuye la condición de usuario e implica la aceptación de todas las condiciones incluidas en este Aviso Legal.</p>
+
+      <h2>3. Propiedad intelectual e industrial</h2>
+      <p>Todos los contenidos del Sitio, incluyendo, a título enunciativo y no limitativo, textos, fotografías, gráficos, imágenes, iconos, tecnología, software, links y demás contenidos audiovisuales o sonoros, así como su diseño gráfico y códigos fuente, son propiedad intelectual del titular o de terceros, sin que puedan entenderse cedidos al usuario ninguno de los derechos de explotación reconocidos por la normativa vigente en materia de propiedad intelectual.</p>
+      <p>Las marcas, nombres comerciales o signos distintivos son titularidad del titular o terceros, sin que pueda entenderse que el acceso al Sitio atribuya derecho alguno sobre los mismos.</p>
+
+      <h2>4. Condiciones de acceso y uso</h2>
+      <p>El usuario se compromete a utilizar el Sitio y los servicios de conformidad con la Ley, el presente Aviso Legal y las buenas costumbres. A tal efecto, el usuario se abstendrá de utilizar el Sitio con fines ilícitos o que lesionen derechos e intereses de terceros.</p>
+      <p>El titular se reserva el derecho a denegar o retirar el acceso al Sitio sin necesidad de preaviso, a instancia propia o de un tercero, a aquellos usuarios que incumplan las presentes condiciones.</p>
+
+      <h2>5. Exclusión de garantías y responsabilidad</h2>
+      <p>El titular no garantiza la disponibilidad y continuidad del funcionamiento del Sitio, ni que sea libre de errores. El titular excluye toda responsabilidad por los daños y perjuicios de cualquier naturaleza que puedan derivarse de la falta de disponibilidad o de continuidad del funcionamiento del Sitio.</p>
+      <p>Los presupuestos generados por la herramienta son estimaciones orientativas. El titular no se hace responsable de las decisiones económicas tomadas en base a los mismos.</p>
+
+      <h2>6. Legislación aplicable y jurisdicción</h2>
+      <p>Las relaciones entre el titular y los usuarios se regirán por la legislación española vigente. Para la resolución de cualquier controversia que pudiera surgir, las partes se someten a los Juzgados y Tribunales del domicilio del usuario, sin perjuicio del fuero que pudiera corresponderle.</p>
+    </div>
+  </div>
+
+  <!-- POLÍTICA DE PRIVACIDAD -->
+  <div class="section" id="s-privacidad">
+    <div class="doc-card">
+      <div class="doc-header">
+        <div class="doc-title">Política de Privacidad</div>
+        <div class="doc-meta">Última actualización: 29 de junio de 2025 · Conforme al RGPD (UE) 2016/679 y LOPDGDD 3/2018</div>
+      </div>
+
+      <h2>1. Responsable del tratamiento</h2>
+      <div class="highlight">
+        <strong>Responsable:</strong> [TU NOMBRE O RAZÓN SOCIAL]<br>
+        <strong>NIF/CIF:</strong> [TU NIF/CIF]<br>
+        <strong>Dirección:</strong> [TU DIRECCIÓN FISCAL]<br>
+        <strong>Email DPO/Contacto:</strong> privacidad@presufy.es
+      </div>
+
+      <h2>2. Datos que recogemos</h2>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Dato</th><th>Finalidad</th><th>Base legal</th><th>Plazo</th></tr>
+          <tr><td>Nombre y email</td><td>Gestión de la cuenta y comunicaciones</td><td>Ejecución del contrato</td><td>Duración del contrato + 5 años</td></tr>
+          <tr><td>Datos de pago (últimos 4 dígitos)</td><td>Facturación y prevención del fraude</td><td>Obligación legal</td><td>10 años (obligación fiscal)</td></tr>
+          <tr><td>Dirección IP y logs de acceso</td><td>Seguridad y mantenimiento técnico</td><td>Interés legítimo</td><td>12 meses</td></tr>
+          <tr><td>Datos introducidos en presupuestos</td><td>Prestación del servicio</td><td>Ejecución del contrato</td><td>Mientras dure la cuenta</td></tr>
+          <tr><td>Cookies analíticas</td><td>Mejorar la experiencia de usuario</td><td>Consentimiento</td><td>13 meses</td></tr>
+        </table>
+      </div>
+
+      <h2>3. Derechos del usuario</h2>
+      <p>Conforme al RGPD, puedes ejercer los siguientes derechos enviando un email a <strong>privacidad@presufy.es</strong> con tu nombre y DNI:</p>
+      <ul>
+        <li><strong>Acceso:</strong> conocer qué datos tenemos sobre ti</li>
+        <li><strong>Rectificación:</strong> corregir datos inexactos</li>
+        <li><strong>Supresión:</strong> solicitar el borrado de tus datos ("derecho al olvido")</li>
+        <li><strong>Oposición:</strong> oponerte al tratamiento de tus datos</li>
+        <li><strong>Portabilidad:</strong> recibir tus datos en formato estructurado</li>
+        <li><strong>Limitación:</strong> solicitar que suspendamos el tratamiento</li>
+      </ul>
+      <p>Responderemos en un plazo máximo de <strong>30 días hábiles</strong>. Si no quedas satisfecho, puedes reclamar ante la <strong>Agencia Española de Protección de Datos (AEPD)</strong> en <a href="https://www.aepd.es" target="_blank" style="color:var(--accent)">www.aepd.es</a>.</p>
+
+      <h2>4. Transferencias internacionales</h2>
+      <p>Algunos de nuestros proveedores de servicios (como Stripe o servicios de hosting) pueden estar ubicados fuera del Espacio Económico Europeo. En todos los casos, garantizamos que dichas transferencias se realizan con las garantías adecuadas exigidas por el RGPD (cláusulas contractuales tipo aprobadas por la Comisión Europea).</p>
+
+      <h2>5. Menores de edad</h2>
+      <p>Presufy no está dirigido a menores de 14 años. No recopilamos conscientemente datos de menores. Si detectas que un menor ha proporcionado datos sin consentimiento parental, contáctanos para proceder a su eliminación.</p>
+
+      <h2>6. Seguridad</h2>
+      <p>Implementamos medidas técnicas y organizativas adecuadas para garantizar un nivel de seguridad apropiado al riesgo, incluyendo cifrado SSL/TLS en todas las comunicaciones, acceso restringido a los datos y copias de seguridad periódicas.</p>
+    </div>
+  </div>
+
+  <!-- COOKIES -->
+  <div class="section" id="s-cookies">
+    <div class="doc-card">
+      <div class="doc-header">
+        <div class="doc-title">Política de Cookies</div>
+        <div class="doc-meta">Última actualización: 29 de junio de 2025 · Conforme a la LSSI-CE y directrices AEPD</div>
+      </div>
+
+      <h2>¿Qué son las cookies?</h2>
+      <p>Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas un sitio web. Nos permiten recordar tus preferencias y mejorar tu experiencia.</p>
+
+      <h2>Cookies que utilizamos</h2>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Cookie</th><th>Tipo</th><th>Finalidad</th><th>Duración</th></tr>
+          <tr><td>presufy_plan</td><td>Técnica esencial</td><td>Recuerda el plan contratado</td><td>Persistente</td></tr>
+          <tr><td>presufy_profile</td><td>Técnica esencial</td><td>Datos de tu empresa guardados</td><td>Persistente</td></tr>
+          <tr><td>presufy_catalog_*</td><td>Técnica esencial</td><td>Tu catálogo de precios por oficio</td><td>Persistente</td></tr>
+          <tr><td>presufy_saved</td><td>Técnica esencial</td><td>Presupuestos guardados</td><td>Persistente</td></tr>
+          <tr><td>_ga, _gid</td><td>Analítica</td><td>Google Analytics — estadísticas de uso anónimas</td><td>13 meses / 24h</td></tr>
+          <tr><td>stripe_*</td><td>Terceros</td><td>Procesamiento seguro de pagos (Stripe)</td><td>Sesión</td></tr>
+        </table>
+      </div>
+
+      <h2>Gestiona tus preferencias</h2>
+      <p>Las cookies técnicas/esenciales no pueden desactivarse ya que son necesarias para el funcionamiento del servicio. Puedes gestionar el resto:</p>
+
+      <div class="cookie-toggle">
+        <div>
+          <div class="cookie-name">🔒 Cookies esenciales</div>
+          <div class="cookie-desc">Necesarias para el funcionamiento básico. No se pueden desactivar.</div>
+        </div>
+        <button class="toggle on" disabled style="opacity:.6;cursor:not-allowed"></button>
+      </div>
+      <div class="cookie-toggle">
+        <div>
+          <div class="cookie-name">📊 Cookies analíticas</div>
+          <div class="cookie-desc">Nos ayudan a entender cómo se usa Presufy para mejorarlo.</div>
+        </div>
+        <button class="toggle on" id="tog-analytics" onclick="this.classList.toggle('on')"></button>
+      </div>
+      <div class="cookie-toggle">
+        <div>
+          <div class="cookie-name">💳 Cookies de terceros (Stripe)</div>
+          <div class="cookie-desc">Necesarias para procesar pagos de forma segura.</div>
+        </div>
+        <button class="toggle on" id="tog-stripe" onclick="this.classList.toggle('on')"></button>
+      </div>
+      <button class="btn-save" onclick="saveCookies()">Guardar preferencias</button>
+
+      <h2 style="margin-top:28px">Cómo eliminar las cookies</h2>
+      <p>Puedes eliminar o bloquear las cookies desde la configuración de tu navegador. Ten en cuenta que desactivar ciertas cookies puede afectar al funcionamiento de Presufy.</p>
+    </div>
+  </div>
+
+  <!-- TÉRMINOS DE USO -->
+  <div class="section" id="s-terminos">
+    <div class="doc-card">
+      <div class="doc-header">
+        <div class="doc-title">Términos y Condiciones de Uso</div>
+        <div class="doc-meta">Última actualización: 29 de junio de 2025</div>
+      </div>
+
+      <h2>1. Aceptación de los términos</h2>
+      <p>El acceso y uso de Presufy implica la aceptación plena y sin reservas de los presentes Términos y Condiciones. Si no estás de acuerdo con alguno de ellos, debes abstenerte de usar el servicio.</p>
+
+      <h2>2. Descripción del servicio</h2>
+      <p>Presufy es una herramienta SaaS (Software as a Service) que permite a profesionales del sector de instalaciones (electricistas, fontaneros, albañiles y empresas del sector) generar presupuestos profesionales de forma rápida. El servicio incluye:</p>
+      <ul>
+        <li>Generación de presupuestos basada en plantillas y catálogos de precios</li>
+        <li>Almacenamiento local de presupuestos y datos de empresa</li>
+        <li>Descarga de presupuestos en formato PDF, Word y CSV</li>
+        <li>Gestión de catálogo de precios por oficio</li>
+      </ul>
+
+      <h2>3. Registro y cuenta de usuario</h2>
+      <p>El usuario es responsable de mantener la confidencialidad de sus credenciales de acceso. Cualquier actividad realizada con su cuenta es responsabilidad del usuario. Debes notificarnos de inmediato cualquier uso no autorizado de tu cuenta.</p>
+
+      <h2>4. Uso aceptable</h2>
+      <p>El usuario se compromete a no:</p>
+      <ul>
+        <li>Usar el servicio para fines ilegales o fraudulentos</li>
+        <li>Intentar acceder a cuentas de otros usuarios</li>
+        <li>Realizar ingeniería inversa del software</li>
+        <li>Sobrecargar intencionadamente los servidores</li>
+        <li>Revender o sublicenciar el acceso al servicio sin autorización expresa</li>
+        <li>Introducir datos falsos o engañosos en los presupuestos generados</li>
+      </ul>
+
+      <h2>5. Planes y precios</h2>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Plan</th><th>Precio</th><th>Presupuestos</th><th>Usuarios</th></tr>
+          <tr><td>Gratuito</td><td>0 €/mes</td><td>5/mes</td><td>1</td></tr>
+          <tr><td>Profesional</td><td>19 €/mes + IVA</td><td>Ilimitados</td><td>1</td></tr>
+          <tr><td>Empresa</td><td>49 €/mes + IVA</td><td>Ilimitados</td><td>5</td></tr>
+        </table>
+      </div>
+      <p>Los precios indicados están sujetos a IVA al tipo vigente (21%). Presufy se reserva el derecho a modificar los precios con un preaviso de 30 días.</p>
+
+      <h2>6. Limitación de responsabilidad</h2>
+      <p>Presufy no garantiza que los precios generados automáticamente se ajusten a las condiciones reales del mercado. Los presupuestos son orientativos y el profesional es el único responsable de las cifras que presenta a sus clientes.</p>
+      <p>La responsabilidad máxima de Presufy ante el usuario no superará el importe pagado por el servicio en los últimos 12 meses.</p>
+
+      <h2>7. Modificaciones del servicio</h2>
+      <p>Presufy se reserva el derecho a modificar, suspender o discontinuar cualquier aspecto del servicio en cualquier momento. Notificaremos los cambios significativos con al menos 30 días de antelación por email.</p>
+
+      <h2>8. Ley aplicable</h2>
+      <p>Estos términos se rigen por la legislación española. Cualquier disputa se someterá a los tribunales competentes de España, sin perjuicio del fuero del consumidor.</p>
+    </div>
+  </div>
+
+  <!-- CONDICIONES DE CONTRATACIÓN -->
+  <div class="section" id="s-contratacion">
+    <div class="doc-card">
+      <div class="doc-header">
+        <div class="doc-title">Condiciones Generales de Contratación</div>
+        <div class="doc-meta">Última actualización: 29 de junio de 2025 · Conforme al RDL 1/2007 (TRLGDCU) y Ley 34/2002</div>
+      </div>
+
+      <h2>1. Proceso de contratación</h2>
+      <p>La contratación de los servicios de Presufy se realiza íntegramente en línea a través del sitio web. El proceso es el siguiente:</p>
+      <ol>
+        <li>El usuario selecciona el plan deseado (Profesional o Empresa)</li>
+        <li>Introduce sus datos de pago y facturación</li>
+        <li>Confirma la contratación pulsando "Activar plan"</li>
+        <li>Recibe una confirmación por email con los detalles de la suscripción</li>
+        <li>El servicio queda activado inmediatamente</li>
+      </ol>
+
+      <h2>2. Derecho de desistimiento</h2>
+      <div class="highlight">
+        <strong>⚖️ Derecho de desistimiento — 14 días</strong><br>
+        Conforme al artículo 102 del RDL 1/2007, tienes derecho a desistir del contrato en un plazo de <strong>14 días naturales</strong> desde la contratación, sin necesidad de indicar el motivo y sin penalización alguna.<br><br>
+        Para ejercer este derecho, envía un email a <strong>legal@presufy.es</strong> indicando tu deseo de desistir. Te reembolsaremos el importe abonado en un plazo máximo de 14 días.
+      </div>
+      <p><strong>Excepción:</strong> Si has solicitado expresamente el inicio del servicio durante el período de desistimiento y el servicio ya se ha prestado íntegramente, pierdes el derecho de desistimiento conforme al art. 103.a) del TRLGDCU.</p>
+
+      <h2>3. Facturación y pago</h2>
+      <ul>
+        <li>La suscripción se renueva automáticamente cada mes o año según el periodo elegido</li>
+        <li>El cobro se realiza el mismo día de cada periodo mediante el método de pago registrado</li>
+        <li>Recibirás una factura por email tras cada cobro</li>
+        <li>En caso de impago, el servicio se suspende transcurridos 7 días</li>
+      </ul>
+
+      <h2>4. Cancelación</h2>
+      <p>Puedes cancelar tu suscripción en cualquier momento desde tu área de cuenta o enviando un email a <strong>soporte@presufy.es</strong>. La cancelación surte efecto al final del periodo de facturación en curso. No se realizan reembolsos por periodos parciales.</p>
+
+      <h2>5. Periodo de prueba</h2>
+      <p>Los planes de pago incluyen un periodo de prueba gratuito de <strong>30 días</strong>. Durante este periodo no se realiza ningún cargo. Si cancelas antes de que finalice el periodo de prueba, no se te cobrará nada.</p>
+
+      <h2>6. Garantía de servicio (SLA)</h2>
+      <p>Presufy se compromete a una disponibilidad del servicio del <strong>99,5% mensual</strong>. En caso de incumplimiento, el usuario podrá solicitar un crédito proporcional sobre su próxima factura.</p>
+
+      <h2>7. Resolución de conflictos en línea</h2>
+      <p>Conforme al Reglamento (UE) 524/2013, los consumidores pueden acudir a la plataforma europea de resolución de litigios en línea: <a href="https://ec.europa.eu/consumers/odr" target="_blank" style="color:var(--accent)">ec.europa.eu/consumers/odr</a></p>
+    </div>
+  </div>
+
+  <!-- RGPD / LOPD -->
+  <div class="section" id="s-rgpd">
+    <div class="doc-card">
+      <div class="doc-header">
+        <div class="doc-title">Información RGPD / LOPDGDD</div>
+        <div class="doc-meta">Última actualización: 29 de junio de 2025 · RGPD (UE) 2016/679 · LOPDGDD 3/2018</div>
+      </div>
+
+      <h2>Información básica sobre protección de datos</h2>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Elemento</th><th>Información</th></tr>
+          <tr><td><strong>Responsable</strong></td><td>[TU NOMBRE O RAZÓN SOCIAL] · [TU NIF]</td></tr>
+          <tr><td><strong>Finalidad</strong></td><td>Prestación del servicio Presufy, gestión de suscripciones, facturación y comunicaciones comerciales propias (con consentimiento)</td></tr>
+          <tr><td><strong>Legitimación</strong></td><td>Ejecución del contrato (art. 6.1.b RGPD) · Obligación legal (art. 6.1.c) · Interés legítimo (art. 6.1.f) · Consentimiento para comunicaciones (art. 6.1.a)</td></tr>
+          <tr><td><strong>Destinatarios</strong></td><td>Stripe Inc. (pagos) · Proveedor de hosting · No se ceden datos a terceros salvo obligación legal</td></tr>
+          <tr><td><strong>Transferencias internacionales</strong></td><td>Stripe Inc. (EE.UU.) bajo cláusulas contractuales tipo CE</td></tr>
+          <tr><td><strong>Plazo de conservación</strong></td><td>Duración del contrato + 5 años (datos comerciales) · 10 años (datos fiscales)</td></tr>
+          <tr><td><strong>Derechos</strong></td><td>Acceso, rectificación, supresión, oposición, portabilidad, limitación</td></tr>
+          <tr><td><strong>Contacto DPD</strong></td><td>privacidad@presufy.es</td></tr>
+          <tr><td><strong>Autoridad de control</strong></td><td>Agencia Española de Protección de Datos · www.aepd.es</td></tr>
+        </table>
+      </div>
+
+      <h2>Medidas de seguridad implementadas</h2>
+      <ul>
+        <li>Cifrado TLS 1.3 en todas las comunicaciones</li>
+        <li>Almacenamiento local en el dispositivo del usuario (localStorage) — los datos de presupuestos no se envían a servidores externos</li>
+        <li>Contraseñas hasheadas con bcrypt</li>
+        <li>Copias de seguridad cifradas</li>
+        <li>Acceso restringido al personal autorizado</li>
+        <li>Registro de accesos y auditoría</li>
+      </ul>
+
+      <h2>Datos de menores</h2>
+      <p>Presufy no está dirigido a menores de 14 años. No recopilamos datos de menores de forma consciente. En caso de detección, procederemos a su eliminación inmediata.</p>
+
+      <h2>Comunicaciones comerciales</h2>
+      <p>Solo enviaremos comunicaciones comerciales si has dado tu consentimiento expreso. Puedes revocar el consentimiento en cualquier momento pulsando "Darme de baja" en cualquier email o contactando a privacidad@presufy.es.</p>
+
+      <h2>Cómo ejercer tus derechos</h2>
+      <div class="highlight">
+        Envía un email a <strong>privacidad@presufy.es</strong> con asunto "Ejercicio de derechos RGPD", indicando:<br>
+        · Tu nombre completo y DNI/NIE<br>
+        · El derecho que deseas ejercer<br>
+        · Dirección de email de tu cuenta Presufy<br><br>
+        Responderemos en un máximo de <strong>30 días hábiles</strong>.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div style="margin-bottom:10px"><strong style="color:var(--accent)">Presufy</strong> — Presupuestos profesionales con IA</div>
+  <div>
+    <a href="#" onclick="showTab('aviso');return false">Aviso Legal</a>
+    <a href="#" onclick="showTab('privacidad');return false">Privacidad</a>
+    <a href="#" onclick="showTab('cookies');return false">Cookies</a>
+    <a href="#" onclick="showTab('terminos');return false">Términos de uso</a>
+    <a href="#" onclick="showTab('contratacion');return false">Contratación</a>
+  </div>
+  <div style="margin-top:12px;font-size:12px">© 2025 Presufy. Todos los derechos reservados.</div>
+</footer>
+
+<script>
+const tabs = ['aviso','privacidad','cookies','terminos','contratacion','rgpd'];
+
+function showTab(id) {
+  tabs.forEach(t => {
+    document.getElementById('s-'+t).classList.toggle('on', t===id);
+  });
+  document.querySelectorAll('.tab').forEach((btn,i) => {
+    btn.classList.toggle('on', tabs[i]===id);
+  });
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function saveCookies() {
+  const analytics = document.getElementById('tog-analytics').classList.contains('on');
+  const stripe    = document.getElementById('tog-stripe').classList.contains('on');
+  localStorage.setItem('presufy_cookies', JSON.stringify({ analytics, stripe, saved: true }));
+  const btn = document.querySelector('.btn-save');
+  btn.textContent = '✓ Preferencias guardadas';
+  btn.style.background = '#16a34a';
+  setTimeout(() => { btn.textContent = 'Guardar preferencias'; btn.style.background = ''; }, 2000);
+}
+
+// Load saved cookie prefs
+const saved = JSON.parse(localStorage.getItem('presufy_cookies')||'{}');
+if (saved.analytics === false) document.getElementById('tog-analytics').classList.remove('on');
+if (saved.stripe === false)    document.getElementById('tog-stripe').classList.remove('on');
+
+// Check for hash
+const hash = window.location.hash.replace('#','');
+if (tabs.includes(hash)) showTab(hash);
+</script>
+</body>
+</html>
